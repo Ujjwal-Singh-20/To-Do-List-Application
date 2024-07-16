@@ -72,4 +72,30 @@ function addTodo() {
     saveTodos();
 }
 
+function filterTodos(filter) {
+    const todos = document.querySelectorAll('#todo-list li');
+    todos.forEach(todo => {
+        switch (filter) {
+            case 'all':
+                todo.style.display = '';
+                break;
+            case 'completed':
+                if (todo.classList.contains('completed')) {
+                    todo.style.display = '';
+                } else {
+                    todo.style.display = 'none';
+                }
+                break;
+            case 'active':
+                if (!todo.classList.contains('completed')) {
+                    todo.style.display = '';
+                } else {
+                    todo.style.display = 'none';
+                }
+                break;
+        }
+    });
+}
+
+
 loadTodos();
