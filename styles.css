@@ -65,3 +65,21 @@ li button {
     border-radius: 3px;
     cursor: pointer;
 }
+
+li button {
+    margin-left: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+li button:first-of-type {
+    background: red;
+    color: white;
+}
+
+li button:last-of-type {
+    background: blue;
+    color: white;
+}
