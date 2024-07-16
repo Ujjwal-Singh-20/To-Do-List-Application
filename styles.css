@@ -51,3 +51,8 @@ li {
 li:last-child {
     border-bottom: none;
 }
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
