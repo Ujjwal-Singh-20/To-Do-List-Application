@@ -39,6 +39,13 @@ document.getElementById('todo-list').addEventListener('click', function(e) {
     }
 });
 
+function editTodo() {
+    const todoText = prompt("Edit the task:", this.parentElement.firstChild.textContent);
+    if (todoText === null || todoText === '') return;
+    this.parentElement.firstChild.textContent = todoText;
+    saveTodos();
+}
+
 function addTodo() {
     const todoText = document.getElementById('new-todo').value;
     if (todoText === '') return;
@@ -53,6 +60,11 @@ function addTodo() {
         saveTodos();
     };
     li.appendChild(deleteButton);
+
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    editButton.onclick = editTodo;
+    li.appendChild(editButton);
 
     document.getElementById('todo-list').appendChild(li);
     document.getElementById('new-todo').value = '';
